@@ -1,0 +1,254 @@
+@media (max-width: 680px) {
+  .experience {
+    --card-width: min(88vw, 520px);
+  }
+
+  .card-stage {
+    top: 43.5%;
+  }
+
+  .letter-sheet {
+    width: calc(100vw - 32px);
+    max-width: 540px;
+    height: min(72dvh, 620px);
+    min-height: min(490px, calc(100dvh - 120px));
+  }
+
+  .letter-copy-wrap {
+    inset: 12.5% 9.5% 10.5%;
+  }
+
+  .letter-copy {
+    font-size: clamp(0.92rem, 4vw, 1rem);
+    line-height: 1.75;
+    letter-spacing: 0.035em;
+  }
+
+  .letter-salutation {
+    margin-bottom: 0.95em !important;
+  }
+
+  .letter-birthday {
+    margin-bottom: 0.72em !important;
+  }
+
+  .letter-signoff {
+    margin-top: 0.92em;
+  }
+
+  .cover-copy {
+    font-size: 1rem;
+    letter-spacing: 0.28em;
+  }
+
+  .wax-seal {
+    transform: translate(-50%, -50%) translateZ(20px) scale(0.88);
+  }
+
+  .stage-hint {
+    bottom: calc(max(86px, env(safe-area-inset-bottom) + 80px));
+    letter-spacing: 0.11em;
+  }
+
+  .keyboard-note {
+    bottom: calc(max(65px, env(safe-area-inset-bottom) + 59px));
+  }
+
+  .letter-turn-button {
+    bottom: calc(max(70px, env(safe-area-inset-bottom) + 64px));
+    font-size: 0.73rem;
+  }
+
+  .botanical-shadow {
+    width: 62vw;
+    filter: blur(24px);
+  }
+
+  .quiet-button {
+    padding-inline: 0.72rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .letter-sheet {
+    width: calc(100vw - 24px);
+  }
+
+  .letter-copy {
+    font-size: 0.88rem;
+    letter-spacing: 0.018em;
+  }
+
+  .reveal-line {
+    white-space: normal;
+  }
+
+  .quiet-button span {
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-height: 720px) and (orientation: portrait) {
+  .card-stage {
+    top: 41%;
+  }
+
+  .letter-sheet {
+    height: min(76dvh, 570px);
+    min-height: min(450px, calc(100dvh - 92px));
+  }
+
+  .letter-copy-wrap {
+    inset-block: 10.5% 9.5%;
+  }
+
+  .letter-copy {
+    line-height: 1.58;
+  }
+
+  .letter-salutation,
+  .letter-birthday {
+    margin-bottom: 0.62em !important;
+  }
+
+  .letter-signoff {
+    margin-top: 0.62em;
+  }
+
+  .letter-turn-button {
+    bottom: calc(max(66px, env(safe-area-inset-bottom) + 60px));
+  }
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .experience {
+    --card-width: min(56vw, 540px);
+  }
+
+  .card-stage {
+    top: 49%;
+    left: 44%;
+  }
+
+  .letter-sheet {
+    width: min(58vw, 500px);
+    height: calc(100dvh - 34px);
+    min-height: min(270px, calc(100dvh - 34px));
+  }
+
+  .letter-copy-wrap {
+    inset: 8% 10% 7.5%;
+  }
+
+  .letter-copy {
+    font-size: clamp(0.72rem, 1.72vw, 0.86rem);
+    line-height: 1.42;
+    letter-spacing: 0.025em;
+  }
+
+  .letter-salutation,
+  .letter-birthday {
+    margin-bottom: 0.38em !important;
+  }
+
+  .letter-signoff {
+    margin-top: 0.38em;
+    line-height: 1.34;
+  }
+
+  .paper-botanical {
+    width: 25%;
+  }
+
+  .finale-content {
+    padding: 8% 9%;
+  }
+
+  .finale-title {
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.35rem, 3.3vw, 1.8rem);
+  }
+
+  .finale-wishes {
+    font-size: 0.84rem;
+    line-height: 1.62;
+  }
+
+  .finale-footer {
+    bottom: 6%;
+  }
+
+  .utility-controls {
+    right: 0;
+    bottom: max(7px, env(safe-area-inset-bottom));
+    left: 0;
+    flex-direction: row;
+    align-items: center;
+    transform: none;
+  }
+
+  .quiet-button {
+    width: auto;
+    min-width: 96px;
+    padding-inline: 0.68rem;
+  }
+
+  .stage-hint {
+    top: 48%;
+    right: max(24px, env(safe-area-inset-right) + 16px);
+    bottom: auto;
+    left: auto;
+    width: 180px;
+    transform: translateY(-50%);
+    line-height: 1.65;
+  }
+
+  .stage-hint::before,
+  .stage-hint::after {
+    display: none;
+  }
+
+  .keyboard-note {
+    display: none;
+  }
+
+  .letter-turn-button {
+    top: calc(48% - 22px);
+    right: max(24px, env(safe-area-inset-right) + 16px);
+    bottom: auto;
+    left: auto;
+    width: 180px;
+    margin: 0;
+  }
+}
+
+@media (orientation: portrait) and (max-height: 430px) {
+  .experience {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .scene {
+    min-height: 440px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-stage {
+    top: 43%;
+  }
+
+  .letter-sheet {
+    width: 540px;
+  }
+}
+
+@supports not (height: 100dvh) {
+  .experience {
+    height: 100vh;
+  }
+
+  .letter-sheet {
+    height: min(72vh, 650px);
+  }
+}

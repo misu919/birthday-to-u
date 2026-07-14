@@ -1,0 +1,274 @@
+.letter-sheet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 4;
+  width: min(88vw, 540px);
+  height: min(72dvh, 650px);
+  min-height: min(460px, calc(100dvh - 120px));
+  transform-style: preserve-3d;
+  border-radius: 3px;
+  box-shadow:
+    0 30px 65px rgba(69, 50, 46, 0.18),
+    0 8px 20px rgba(69, 50, 46, 0.12),
+    0 1px 0 rgba(255, 255, 255, 0.8);
+  will-change: transform, opacity;
+}
+
+.letter-sheet::before {
+  content: "";
+  position: absolute;
+  right: 6px;
+  bottom: -4px;
+  left: 6px;
+  z-index: -1;
+  height: 8px;
+  border-radius: 0 0 4px 4px;
+  background: #d8c9bc;
+  box-shadow: 0 2px 4px rgba(67, 49, 44, 0.12);
+}
+
+.letter-paper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  border: 1px solid rgba(104, 75, 83, 0.12);
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 18% 15%, rgba(255, 255, 255, 0.7), transparent 28%),
+    repeating-linear-gradient(98deg, rgba(104, 75, 83, 0.018) 0 1px, transparent 1px 5px),
+    repeating-linear-gradient(4deg, rgba(195, 161, 93, 0.018) 0 1px, transparent 1px 6px),
+    var(--color-paper);
+}
+
+.letter-paper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.24;
+  background-image: radial-gradient(rgba(74, 58, 50, 0.16) 0.45px, transparent 0.55px);
+  background-size: 7px 7px;
+  mix-blend-mode: multiply;
+}
+
+.paper-ornaments {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: inherit;
+  color: rgba(195, 161, 93, 0.56);
+  pointer-events: none;
+}
+
+.paper-botanical {
+  position: absolute;
+  width: 34%;
+  height: auto;
+}
+
+.paper-botanical--top {
+  top: -2px;
+  right: -3px;
+}
+
+.paper-botanical--bottom {
+  bottom: -2px;
+  left: -3px;
+  transform: rotate(180deg);
+}
+
+.paper-rule {
+  position: absolute;
+  right: 11%;
+  left: 11%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(195, 161, 93, 0.48), transparent);
+}
+
+.paper-rule--top {
+  top: 7.5%;
+}
+
+.paper-rule--bottom {
+  bottom: 7.5%;
+}
+
+.letter-copy-wrap {
+  position: absolute;
+  inset: 13.5% 12.5% 11.5%;
+  z-index: 3;
+  overflow: hidden;
+  color: var(--color-ink);
+}
+
+.reveal-canvas:focus-visible {
+  outline: 2px solid rgba(52, 61, 56, 0.82);
+  outline-offset: -3px;
+}
+
+.letter-copy {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: clamp(0.96rem, 1.55vw, 1.08rem);
+  line-height: 1.82;
+  letter-spacing: 0.055em;
+  text-shadow: 0 0.5px rgba(52, 61, 56, 0.12);
+}
+
+.letter-copy p {
+  margin: 0;
+}
+
+.letter-salutation,
+.letter-birthday,
+.reveal-line,
+.letter-signoff p {
+  display: table;
+  width: auto;
+}
+
+.letter-salutation {
+  margin-bottom: 1.15em !important;
+}
+
+.letter-birthday {
+  margin-bottom: 0.88em !important;
+  color: #4a373a;
+  font-size: 1.12em;
+  letter-spacing: 0.12em;
+}
+
+.letter-wishes {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.reveal-line {
+  white-space: nowrap;
+}
+
+.letter-signoff {
+  align-self: flex-end;
+  margin-top: 1.15em;
+  text-align: right;
+  font-size: 0.9em;
+  line-height: 1.62;
+}
+
+.letter-signoff p {
+  margin-left: auto;
+}
+
+.reveal-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  cursor: none;
+  touch-action: none;
+  user-select: none;
+}
+
+.reveal-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: clamp(92px, 18vw, 138px);
+  aspect-ratio: 1;
+  margin: calc(clamp(92px, 18vw, 138px) / -2) 0 0 calc(clamp(92px, 18vw, 138px) / -2);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(225, 194, 127, 0.27), rgba(195, 161, 93, 0.1) 38%, transparent 70%);
+  opacity: 0;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  transition: opacity 0.32s ease;
+  will-change: transform, opacity;
+}
+
+.reveal-glow.is-visible {
+  opacity: 0.7;
+}
+
+.reveal-glow.is-hinting {
+  animation: glow-hint 1.8s ease-in-out 1;
+}
+
+@keyframes glow-hint {
+  0%,
+  100% {
+    opacity: 0.18;
+    filter: blur(1px);
+  }
+  50% {
+    opacity: 0.58;
+    filter: blur(3px);
+  }
+}
+
+.finale-content {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 17% 10% 13%;
+  color: var(--color-ink);
+  text-align: center;
+  pointer-events: none;
+}
+
+.finale-title {
+  margin: 0 0 clamp(1.6rem, 4vh, 2.3rem);
+  color: #4d373c;
+  font-size: clamp(1.75rem, 4.2vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-indent: 0.24em;
+  text-shadow: 0 4px 20px rgba(195, 161, 93, 0.12);
+}
+
+.finale-wishes {
+  font-size: clamp(0.98rem, 1.8vw, 1.12rem);
+  line-height: 1.95;
+  letter-spacing: 0.12em;
+}
+
+.finale-line {
+  margin: 0;
+}
+
+.finale-footer {
+  position: absolute;
+  right: 0;
+  bottom: 10.5%;
+  left: 0;
+  margin: 0;
+  color: rgba(52, 61, 56, 0.8);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+}
+
+.phase-revealing .letter-copy-wrap {
+  cursor: none;
+}
+
+.phase-finale .letter-sheet {
+  box-shadow:
+    0 34px 76px rgba(69, 50, 46, 0.13),
+    0 9px 22px rgba(69, 50, 46, 0.08),
+    0 0 42px rgba(195, 161, 93, 0.08);
+}

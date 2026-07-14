@@ -1,7 +1,7 @@
 export const cardContent = {
-  documentTitle: '给 xxx 的生日花信',
+  documentTitle: '给 鸿 的生日花信',
   documentDescription: '一封为你封存的生日花信',
-  cover: 'xxx 亲启',
+  cover: '鸿 亲启',
   decorative: {
     innerMark: 'A LETTER FOR YOU',
     waxMonogram: '花',
@@ -12,16 +12,15 @@ export const cardContent = {
     keyboard: '按 Enter 或空格键也可以开启',
   },
   letter: {
-    salutation: 'xxx：',
-    birthday: '生日快乐。',
+    salutation: '鸿：',
+    birthday: '祝你生日快乐！',
     wishes: [
-      '愿你在新的一岁里，',
-      '仍然拥有认真感受生活的勇气，',
-      '遇见值得期待的人和事，',
-      '也一直保留属于自己的自由与快乐。',
+      '希望你所愿皆成，身心无恙！',
+      '希望你遇见值得期待的人和事!',
+      '以及希望你抓住好多好多的幸福！',
     ],
-    signature: '—— xxxxx',
-    date: 'xxxx.xx.xx',
+    signature: '—— 泷',
+    date: '27.5.1',
   },
   finale: {
     title: '生日快乐',
